@@ -65,11 +65,12 @@ function Home() {
             <div className="container mx-auto px-4 py-8">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-4xl font-bold">Menu Items</h1>
-                    <Link to="/add-food" className="bg-blue-600 text-slate-100 py-2 px-4 rounded hover:bg-blue-700">
-                        Add New Item
+                    <Link to="/add-food" className="bg-amber-50 px-4 py-2 rounded hover:bg-amber-100 transition duration-200">
+                        Add Food Item
                     </Link>
                 </div>
                 
+
                 {error && (
                     <div className="bg-red-100 text-red-700 p-3 rounded mb-4">
                         {error}

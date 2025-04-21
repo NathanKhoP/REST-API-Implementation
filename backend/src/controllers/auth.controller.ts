@@ -49,8 +49,9 @@ class AuthController {
       if (error instanceof Error) {
         if (error.message.includes("User not found...") || error.message.includes("Wrong password!")) {
           res.status(401).json(formatResponse("failed", error.message, null));
+        } else {
+          res.status(500).json(formatResponse("error", error.message, null));
         }
-        res.status(500).json(formatResponse("error", error.message, null));
       } 
       else {
          res.status(500).json(formatResponse("error", "An unknown error occurred.", null));

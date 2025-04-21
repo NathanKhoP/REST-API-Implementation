@@ -21,6 +21,11 @@ app.get("/", (req: Request, res: Response) => {
   res.send(response);
 });
 
+// Ping-pong endpoint for latency testing
+app.get("/ping", (req: Request, res: Response) => {
+  res.json(formatResponse("success", "pong", { timestamp: Date.now() }));
+});
+
 // routes
 app.use("/auth", authRoutes);
 app.use("/food", foodRouters);
